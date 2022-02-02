@@ -1,14 +1,71 @@
 <div class="create-course-panel data-form">
   <h2 class="title">Create New Course</h2>
-  <mat-horizontal-stepper class="mat-elevation-z5" labelPosition="bottom">
-    <mat-step>
-      <ng-template matStepLabel>course landing page details</ng-template>
-      <create-course-step-1></create-course-step-1>
+  <mat-horizontal-stepper
+    [linear]="false"
+    class="mat-elevation-z5"
+    labelPosition="bottom">
+    <mat-step
+      label="course landing page details"
+      [stepControl]="step1.form"
+      errorMessage="Landing page is in error">
+      <create-course-step-1 #step1></create-course-step-1>
       <div class="stepper-buttons">
         <button mat-raised-button color="primary" matStepperNext>
-          Continue to Setp 2
+          Continue to Step 2
         </button>
       </div>
     </mat-step>
+    <mat-step
+      label="course landing page details"
+      [stepControl]="step1.form"
+      errorMessage="Landing page is in error">
+      <create-course-step-1 #step1></create-course-step-1>
+      <div class="stepper-buttons">
+        <button mat-raised-button matStepperPrevious>Back</button>
+
+        <button mat-raised-button color="primary" matStepperNext>
+          Continue to Step 2
+        </button>
+      </div>
+    </mat-step>
+    <mat-step
+      label="course pricing details"
+      errorMessage="Princing page is in error">
+      <create-course-step-2></create-course-step-2>
+      <div class="stepper-buttons">
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <button mat-raised-button matStepperNext color="primary">
+          Continue to step 3
+        </button>
+      </div>
+    </mat-step>
+    <mat-step
+      label="course pricing details"
+      errorMessage="Princing page is in error">
+      <create-course-step-2></create-course-step-2>
+      <div class="stepper-buttons">
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <button mat-raised-button matStepperNext color="primary">
+          Continue to step 4
+        </button>
+      </div>
+    </mat-step>
+    <mat-step
+      label="course pricing details"
+      errorMessage="Princing page is in error">
+      <create-course-step-2></create-course-step-2>
+      <div class="stepper-buttons">
+        <button mat-raised-button matStepperPrevious>Back</button>
+      </div>
+    </mat-step>
+    <!-- <ng-template matStepperIcon="init">
+      <mat-icon>done</mat-icon>
+  </ng-template>
+    <ng-template matStepperIcon="edit">
+      <mat-icon>done</mat-icon>
+  </ng-template> -->
+    <ng-template matStepperIcon="first">
+      <mat-icon>done_all</mat-icon>
+    </ng-template>
   </mat-horizontal-stepper>
 </div>

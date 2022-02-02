@@ -13,7 +13,7 @@ $mat-primary: (
   200: #90caf9,
   300: #64b5f6,
   400: #42a5f5,
-  500: #1976d2,
+  500: #3DCD58,
   600: #1e88e5,
   700: #1976d2,
   800: #1565c0,
@@ -82,3 +82,6 @@ $theme: mat.define-light-theme($primary, $accent);
 
 // Include all theme styles for the components.
 @include mat.all-component-themes($theme);
+mat-step-header {
+  pointer-events: none;
+}
